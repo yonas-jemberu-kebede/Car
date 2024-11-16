@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Location;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Customer>
  */
@@ -17,7 +18,7 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         return [
-            'location_id'=>Location::factory(),
+            'location_id' => Location::factory(),
             'first_name' => $this->faker->firstName(), // Example: John
             'last_name' => $this->faker->lastName(), // Example: Doe
             'email' => $this->faker->unique()->safeEmail(), // Example: john.doe@example.com

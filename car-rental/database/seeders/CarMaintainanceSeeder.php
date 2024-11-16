@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\CarMaintainance;
 use Illuminate\Database\Seeder;
 
 class CarMaintainanceSeeder extends Seeder
@@ -12,6 +12,6 @@ class CarMaintainanceSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        CarMaintainance::factory(10)->create();
     }
 }

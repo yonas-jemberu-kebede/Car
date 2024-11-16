@@ -9,19 +9,26 @@ class Booking extends Model
 {
     /** @use HasFactory<\Database\Factories\BookingFactory> */
     use HasFactory;
+
     protected $guarded = [];
 
-    public function customer(){
+    public function customer()
+    {
         return $this->belongsTo(Customer::class);
     }
-    public function car(){
+
+    public function car()
+    {
         return $this->belongsTo(Car::class);
     }
-    public function location(){
+
+    public function location()
+    {
         return $this->belongsTo(Location::class);
     }
 
-    public function invoices(){
+    public function invoices()
+    {
         return $this->hasMany(Invoice::class);
     }
 }

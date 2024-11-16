@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('booking_id')->constrained('bookings')->cascadeOnDelete();
 
-            $table->decimal('amount',8,2);
-            $table->decimal('tax',8,2);
-            $table->decimal('total_amount',8,2);
-            $table->enum('payment_status',['Pending','Paid','Failed']);
+            $table->decimal('amount', 8, 2);
+            $table->decimal('tax', 8, 2);
+            $table->decimal('total_amount', 8, 2);
+            $table->enum('payment_status', ['Pending', 'Paid', 'Failed']);
             $table->dateTime('invoice_date');
             $table->dateTime('due_date');
             $table->timestamps();

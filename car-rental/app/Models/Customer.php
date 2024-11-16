@@ -10,13 +10,15 @@ class Customer extends Model
     /** @use HasFactory<\Database\Factories\CustomerFactory> */
     use HasFactory;
 
-    protected $guarded=[];
-    public function bookings(){
+    protected $guarded = [];
+
+    public function bookings()
+    {
         return $this->hasMany(Booking::class);
     }
 
-    public function location(){
+    public function location()
+    {
         return $this->belongsTo(Location::class);
     }
 }
-

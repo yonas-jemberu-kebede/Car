@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Location;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Car>
  */
@@ -17,11 +18,11 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            'location_id'=>Location::factory(),
-            'make' =>fake()->company(),
-            'model'=> fake()->car(),
-            'year'=>(int)date('Y'),
-            'color'=>fake()->color(),
+            'location_id' => Location::factory(),
+            'make' => fake()->company(),
+            'model' => fake()->car(),
+            'year' => (int) date('Y'),
+            'color' => fake()->color(),
             'license_plate' => fake()->unique()->bothify('???-####'),
             'status' => $this->faker->randomElement(['Available', 'Rented', 'Maintenance']),
             'rental_price_per_day' => $this->faker->randomFloat(2, 50, 500), // Price between $50.00 and $500.00

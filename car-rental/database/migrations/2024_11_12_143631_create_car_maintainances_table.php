@@ -17,9 +17,8 @@ return new class extends Migration
             $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete();
             $table->dateTime('maintainance_date');
             $table->text('description');
-            $table->decimal('cost',8,2);
-            $table->enum('status', ['Pending','Completed']);
-
+            $table->decimal('cost', 8, 2);
+            $table->enum('status', ['Pending', 'Completed']);
 
             $table->timestamps();
         });

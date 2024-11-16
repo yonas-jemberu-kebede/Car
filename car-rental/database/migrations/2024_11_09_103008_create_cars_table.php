@@ -17,14 +17,14 @@ return new class extends Migration
             $table->foreignId('location_id')->constrained('locations')->cascadeOnDelete();
 
             $table->string('make');
-            $table->string('model',100)->change();
+            $table->string('model', 100)->change();
             $table->unsignedBigInteger('year');
             $table->string('color');
             $table->string('license_plate')->unique();
             $table->enum('status', ['Available', 'Rented', 'Maintenance']);
-            $table->decimal('rental_price_per_day',8,2);
+            $table->decimal('rental_price_per_day', 8, 2);
             $table->enum('fuel_type', ['Petrol', 'Diesel', 'Electric']);
-         
+
             $table->timestamps();
         });
     }

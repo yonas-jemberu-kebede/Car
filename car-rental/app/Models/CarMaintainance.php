@@ -9,13 +9,16 @@ class CarMaintainance extends Model
 {
     /** @use HasFactory<\Database\Factories\CarMaintainanceFactory> */
     use HasFactory;
-    protected $guarded= [];
 
-    public function car(){
+    protected $guarded = [];
+
+    public function car()
+    {
         return $this->belongsTo(Car::class);
     }
 
-    public function employee(){
+    public function employee()
+    {
         return $this->belongsTo(Employee::class);
     }
 }

@@ -16,9 +16,9 @@ return new class extends Migration
 
             $table->foreignId('invoice_id')->constrained('payments')->cascadeOnDelete();
 
-            $table->decimal('amount_paid',8,2);
-            $table->enum('payment_method',['Credit Card','Cash','Bank Transfer']);
-            $table->enum('payment_status',['Completed','Pending','Failed']);
+            $table->decimal('amount_paid', 8, 2);
+            $table->enum('payment_method', ['Credit Card', 'Cash', 'Bank Transfer']);
+            $table->enum('payment_status', ['Completed', 'Pending', 'Failed']);
             $table->dateTime('payment_date');
             $table->timestamps();
         });

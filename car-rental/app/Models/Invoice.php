@@ -10,12 +10,15 @@ class Invoice extends Model
     /** @use HasFactory<\Database\Factories\InvoiceFactory> */
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
-    public function booking(){
+    public function booking()
+    {
         return $this->belongsTo(Booking::class);
     }
 
-    public function payments(){
-        return $this->hasMany(Payment::class);}
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

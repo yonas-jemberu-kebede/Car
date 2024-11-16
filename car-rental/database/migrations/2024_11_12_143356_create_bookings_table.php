@@ -21,9 +21,9 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->string('pickup_location');
             $table->string('dropoff_location');
-            $table->decimal('total_price',8,2);
-            $table->enum('payment_status',['Pending','Paid']);
-            $table->enum('status',['Confirmed','Completed','Canceled']);
+            $table->decimal('total_price', 8, 2);
+            $table->enum('payment_status', ['Pending', 'Paid']);
+            $table->enum('status', ['Confirmed', 'Completed', 'Canceled']);
             $table->timestamps();
         });
     }
