@@ -17,7 +17,13 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invoice_id' => \App\Models\Invoice::factory(), // Generates a related Invoice record
+            'amount_paid' => $this->faker->randomFloat(2, 10, 5000), // Random amount between $10 and $5000
+            'payment_method' => $this->faker->randomElement(['Credit Card', 'Cash', 'Bank Transfer']), // Randomly selects a payment method
+            'payment_status' => $this->faker->randomElement(['Completed', 'Pending', 'Failed']), // Randomly selects a payment status
+            'payment_date' => $this->faker->dateTimeThisYear(), // Example: Payment date within the current year
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
