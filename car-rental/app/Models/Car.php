@@ -10,5 +10,17 @@ class Car extends Model
     /** @use HasFactory<\Database\Factories\CarFactory> */
     use HasFactory;
 
-    protected $fillable = [];
+    protected $guarded= [];
+
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
+
+    public function bookings(){
+        return $this->hasMany(Booking::class);
+    }
+
+    public function carMaintainance(){
+        return $this->hasMany(CarMaintainance::class);
+    }
 }

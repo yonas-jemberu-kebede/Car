@@ -9,4 +9,12 @@ class Employee extends Model
 {
     /** @use HasFactory<\Database\Factories\EmployeeFactory> */
     use HasFactory;
+    protected $guarded = [];
+
+    public function carMaintainances(){
+      return $this->hasMany(CarMaintainance::class);
+    }
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
 }
