@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('location_id')->constrained('locations')->cascadeOnDelete();
 
             $table->string('make');
-            $table->string('model', 100)->change();
+            $table->string('model', 100);
             $table->unsignedBigInteger('year');
             $table->string('color');
             $table->string('license_plate')->unique();

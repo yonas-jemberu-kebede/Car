@@ -19,14 +19,14 @@ class CarFactory extends Factory
     {
         return [
             'location_id' => Location::factory(),
-            'make' => fake()->company(),
-            'model' => fake()->car(),
+            'make' => fake()->company(), // Represents car manufacturer
+            'model' => fake()->randomElement(['Model S', 'Civic', 'Corolla', 'Mustang', 'X5']),
             'year' => (int) date('Y'),
-            'color' => fake()->color(),
+            'color' => fake()->safeColorName(),
             'license_plate' => fake()->unique()->bothify('???-####'),
-            'status' => $this->faker->randomElement(['Available', 'Rented', 'Maintenance']),
-            'rental_price_per_day' => $this->faker->randomFloat(2, 50, 500), // Price between $50.00 and $500.00
-            'fuel_type' => $this->faker->randomElement(['Petrol', 'Diesel', 'Electric']),
+            'status' => fake()->randomElement(['Available', 'Rented', 'Maintenance']),
+            'rental_price_per_day' => fake()->randomFloat(2, 50, 500), // Price between $50.00 and $500.00
+            'fuel_type' => fake()->randomElement(['Petrol', 'Diesel', 'Electric']),
             'created_at' => now(),
             'updated_at' => now(),
         ];

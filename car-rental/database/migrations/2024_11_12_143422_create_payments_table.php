@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('invoice_id')->constrained('payments')->cascadeOnDelete();
+            $table->foreignId('invoice_id')->constrained('invoices')->cascadeOnDelete();
 
             $table->decimal('amount_paid', 8, 2);
             $table->enum('payment_method', ['Credit Card', 'Cash', 'Bank Transfer']);

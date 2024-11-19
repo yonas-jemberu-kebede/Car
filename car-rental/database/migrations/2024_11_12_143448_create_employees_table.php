@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('phone_number');
-            $table->enum('role', ['Admin', 'Staff'.'Mechanic', 'Manager']);
+            $table->string('role');
             $table->timestamps();
         });
     }
